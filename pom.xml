@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.ac.leeds.ccg.andyt</groupId>
+    <artifactId>agdt-cgm</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>agdt-cgm</name>
+    <url>https://github.com/agdturner/agdt-cgm</url>
+	<description>Andy Turner's source code for the Common Ground Map Project</description>
+	<scm>
+		<url>git@github.com:agdturner/agdt-cgm.git</url>
+		<connection>scm:git:git@github.com:agdturner/agdt-cgm.git</connection>
+		<developerConnection>scm:git:git@github.com:agdturner/agdt-cgm.git</developerConnection>
+	</scm>
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>https://github.com/agdturner/agdt-cgm/blob/master/LICENSE.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<organization>
+		<name>Centre for Computational Geography</name>
+		<url>http://www.ccg.leeds.ac.uk/</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>agdturner</id>
+			<name>Andy Turner</name>
+			<email>a.g.d.turner@leeds.ac.uk</email>
+			<organization>University of Leeds</organization>
+			<organizationUrl>http://www.leeds.ac.uk</organizationUrl>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+	
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <generic.version>1.0-SNAPSHOT</generic.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <!--
+            <groupId>uk.ac.leeds.ccg.andyt.generic</groupId>
+            -->
+            <groupId>uk.ac.leeds.ccg.andyt</groupId>
+			<artifactId>generic</artifactId>
+            <version>${generic.version}</version>
+        </dependency>
+		<dependency>
+			<groupId>mil.nga.sf</groupId>
+			<artifactId>sf-geojson</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+    </dependencies>
+       
+    <repositories>
+        <repository>
+            <id>generic</id>
+            <name>GitHub agdturner generic Repository</name>
+            <url>https://github.com/agdturner/generic</url>
+        </repository>
+        <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
+    
+</project>
