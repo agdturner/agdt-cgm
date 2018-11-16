@@ -1,0 +1,101 @@
+SITE_ID,ADDRESS,SITE_TYPE,DIST_TO_KERB,HEIGHT,DISTANCE_TO_RELEVANT_EXP,ANNUAL_MEAN_2015_BIAS_ADJUSTED,EASTING,NORTHING
+D2 (A3),Headingley (Affiliated),Kerbside,1m,2.7,N/A,37,427989,436045
+D6 (A6),"Haslewood Close, Wall corner (R)",Roadside,7m (to A64),3.3,0,34,431268,433701
+D7 (A6),"Haslewood Close, Wall corner (L)",Roadside,7m (to A64),3.3,0,36,431268,433701
+D8,Haslewood Close Gable,Roadside,8m,2.4,0,35,431264,433704
+D9,Haslewood Close facing open area,Roadside,27m,2.4,0,32,431269,433720
+D17,19/20 Ladybeck Cl (rear) DP,Roadside,13m,2.4,0,36,430750,433813
+D19,Ladybeck Reception (rear),Roadside,14m,2.4,0,33,430695,433835
+D20,"25 Ladybeck Cl, rear block (side)",Roadside,6m (to A64),2.4,0,35,430727,433834
+D24 ,West Street             Car Park,Urban Centre,25m,2.7,N/A,31,429011,433617
+D26 (A1),Leeds Centre AURN (L),Urban Centre,30m,2.7,N/A,31,429969,434259
+D27 (A1),Leeds Centre AURN (R),Urban Centre,30m,2.7,N/A,33,429969,434259
+D28 (A1),Leeds Centre AURN (M),Urban Centre,30m,2.7,N/A,32,429969,434259
+D31,"Railway Terrace, East Ardsley",Roadside,14m (to M62),2.4,0,32,430151,426388
+D35,"110 Jack Lane, Hunslet",Roadside,7m,2.4,0,36,430720,431898
+D43,"82 New Road Side, Horsforth",Roadside,1m,2.4,0,43,423925,437335
+D44,"253 New Road Side, Horsforth",Roadside,2m,2.4,0,31,423269,437505
+D45,"2 Norman Row, pipe, Kirkstall",Roadside,2m,2.4,0,37,426276,435820
+D46,"4 De Lacey Mount, Kirkstall",Roadside,7m,2.4,0,27,426214,435955
+D48,"2 Haddon Place, Kirkstall",Roadside,3m,2.4,0,31,427437,434618
+D52,"78 Selby Rd, Garforth  LP",Kerbside,2m,2.4,0,41,440063,432361
+D53,"1 Gilbert Mount, Kirkstall",Roadside,17m (to A65),2.4,0,23,426531,435222
+D59 (A2),Corn Exchange,Urban Centre,1m,2.7,0,49,430358,433422
+D60 (A17),Kirkstall Rd/ Woodside Terr.,Roadside,5m,2.7,0,28,427147,434789
+D66,131 Harehills Lane,Roadside,7m,2.4,0,30,431928,435910
+D68 (A9),Jack Lane GH,Roadside,5m (to A61),2.7,N/A,43,430731,431911
+D70,"Ladysmith Workwear, Easy Road",Roadside,7m,2.4,0,35,431534,432764
+D74,"Norman Street, Kirkstall Rd LP",Roadside,12m,2.4,0,38,426291,435800
+D76,302 York Road,Roadside,8m,2.4,0,29,432569,433764
+D78,2 Eyres Terrace,Roadside,6m,2.4,0,35,427089,433686
+D95,"High Street LP, Wetherby",Roadside,2m,2.4,0,32,440442,448133
+D96,"21 St James St, Wetherby",Roadside,1m,2.4,0,32,440408,448407
+D98,76 Woodhouse Hill Rd,Roadside,22m (to M621),2.4,0,33,431347,430578
+D105,"76 Selby Rd, Garforth",Kerbside,4m,2.4,0,43,440034,432364
+D109,"107 Bradford Rd, Otley",Roadside,3m,2.4,0,39,419598,445168
+D110,"23 Westgate, Otley",Roadside,2m,2.4,0,36,420037,445462
+D114,"8 Main Street, Pool",Roadside,2m,2.4,0,60,424507,445151
+D115,"66 North Street, Wetherby",Roadside,2m,2.4,0,33,440537,448514
+D117,"15 Ashfield Road, Morley",Roadside,2m,2.4,0,32,425691,426879
+D118,"1 Rein Road, Morley",Roadside,2m,2.4,0,41,426914,426605
+D119,"109 Bridge Street, Morley",Roadside,6m,2.4,0,31,426788,426773
+D120,"2 Chapel Hill, Morley",Roadside,2m,2.7,0,39,426362,428162
+D121,"adj 32 Otley Road, Headingley",Roadside,2m,2.4,0,39,427906,436195
+D122,"North Street, LS2 (o/s Northern Intelligence)",Roadside,2m,2.4,0,36,430522,434022
+D123,Victoria Avenue,Roadside,15m (to A64),2.4,0,29,432419,433674
+D124,"21 Rein Road, Morley",Roadside,4m,2.4,0,33,426990,426466
+D125,12 Tilbury Terrace,Roadside,17m (to M621),2.4,0,32,428824,431658
+D126,73 East Park Parade,Roadside,2m,2.4,0,32,432527,433409
+D128,"51 Long Row, Horsforth",Roadside,1m,2.4,0,35,424168,438668
+D129,"33 Long Row, Horsforth",Roadside,4m,2.4,0,29,424143,438610
+D133,"St Wilfrid’s Terrace, Main Street, Pool",Roadside,1m,2.4,0,45,424405,445305
+D135,Gotts Road (L),Roadside,7m (to A58M),2.4,N/A,44,428866,433332
+D136,Gotts Road (R),Roadside,7m (to A58M),2.4,N/A,47,428858,433327
+D137,"362 Bradford Rd, Thornbury",Roadside,4m,2.4,0,28,420612,434359
+D144,"Railway Terrace, East Ardsley LP",Roadside,12m (to M62),2.4,0,37,430142,426388
+D145,256 Lingwell Gt Lane,Roadside,70m (to M1),2.4,0,26,431883,425566
+D149,Tilbury Row new tube,Kerbside,35m (to M621 on?slip),2.4,0,29,428762,431670
+D150,582 Meanwood Road,Roadside,2m,2.4,0,27,428630,436940
+D151,"Sunbeam Terrace, 2 Bradford Road, Tingley",Roadside,5m,2.4,0,30,428280,426170
+D153,"3 Oban Terrace, Bradford Road, Tingley",Roadside,10m,2.4,0,34,427900,426240
+D154,"The Brambles, Bradford Road, Tingley",Roadside,27m,2.4,0,36,428080,426220
+D155,9 Ladybeck Close,Roadside,12m,2.4,0,36,430720,433785
+D156,368 Dewsbury Road,Roadside,6m,2.4,0,33,429465,430247
+D157,Maple Court,Roadside,15m,2.4,0,23,428599,430790
+D158,69 Jessamine Avenue,Roadside,6m,2.4,0,25,428817,430464
+D159,659 Dewsbury Road,Roadside,16m,2.4,0,30,428990,429855
+D160,79 Faroe             (off Gotts Road),Urban Background,N/A,5th Floor,0,27,429070,433250
+D161,236 Leadwell Lane,Roadside,3m,2.4,0,32,432556,427356
+D162,21 Wesley Street,Roadside,20m,2.4,0,20,428576,430894
+D163,International Pool (co-located),Roadside,5m,1.5,N/A,45,429329,433672
+D164,International Pool Car Park,Roadside,5m,2.4,N/A,40,429260,433639
+D165,Yorkshire Post,Roadside,9m,2.4,N/A,53,428980,433435
+D166,Gotts Rd Exit,Roadside,6m,2.4,N/A,49,428926,433394
+D167,Graingers Way,Roadside,6m,2.4,N/A,50,428779,433252
+D168,Spence Lane,Roadside,9m,2.4,N/A,46,428633,432860
+D169,Arco,Roadside,19m,2.4,N/A,38,428582,432656
+D170,Canal Place,Roadside,7m,2.4,N/A,44,428766,433294
+D171,Harley Davidson,Roadside,10m,2.4,N/A,49,428833,433358
+D172,Fountain Street,Roadside,23m,2.4,N/A,32,429285,433723
+D173,Central Village GF,Roadside, 7m,2.7,0,33,429696,434327
+D174,Central Village 17th,Roadside, N/A,17th Floor,0,32,429696,434327
+D175,Central Village 21st,Roadside, N/A,21st Floor,0,30,429696,434327
+D176,"Wattle Syke, Collingham",Kerbside,2m,2.4,7m,44,439487,446158
+D177,"Half Moon, Collingham",Kerbside,8m,2.4,0,30,438758,445935
+D178,City Sq TL (SW o/s Queens Hotel),Kerbside,1m,2.4,N/A,46,429839,433401
+D179,City Sq TL (SW o/s Majestic),Kerbside,1m,2.4,N/A,58,429837,433410
+D180,City Square (north side),Kerbside,1m,2.4,N/A,47,429905,433473
+D181,City Sq TL (SE Boar Ln side),Kerbside,1m,2.4,N/A,62,429939,433403
+D182,City Sq TL (SE o/s Queens Hotel),Kerbside,1m,2.4,N/A,56,429932,433397
+D183,Neville St TL (NW tunnel exit),Kerbside,1m,2.4,N/A,95,429965,433295
+D184,Neville St TL (NE tunnel entrance),Kerbside,1m,2.4,N/A,88,429989,433291
+D186,Neville St Bus Stop (SE tunnel exit),Kerbside,1m,2.4,N/A,60,429965,433173
+D187,Neville St Pipe (SW tunnel entrance),Kerbside,3m,2.4,N/A,64,429958,433176
+D189,Kirkstall Lane,Roadside,2m,2.4,7m,39,426580,435685
+D190,"8 Carlton Moor Mews, Sharp Ln LP",Roadside,2m,2.4,3m,31,431639,427967
+D191,Skyliner Apartments Rentals ,Roadside,1m,2.4,13m,48,430774,433566
+D192,St Peter's Square            /Duke St,Roadside,1m,2.4,N/A,60,430779,433515
+D193,LP Opp Millgarth Police Stn site,Roadside,1m,2.4,N/A,55,430699,433684
+D194,"5 Wattle Syke, Collingham",Roadside,11m,2.4,0,27,439524,446143
+D195,273 Elland Road,Roadside,15m,2.4,0,25,428213,431181
+D196,"120 Park Road , Guiseley",Roadside,7m,2.4,0,24,418941,441730
