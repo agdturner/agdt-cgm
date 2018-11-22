@@ -1,0 +1,2 @@
+calderdale-public-wifi-spots.csv Downloaded from https://dataworks.calderdale.gov.uk/dataset/public-wifi-hotspots
+pollution.csv Provided by Paul Charterton by email.

@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mil.nga.sf.Geometry;
 import mil.nga.sf.geojson.Feature;
 import mil.nga.sf.geojson.FeatureCollection;
@@ -35,6 +37,12 @@ public class Main {
     Files files;
     Strings strings;
 
+    File outdir;
+    File infile;
+    String name;
+    File outfile;
+    PrintWriter pw;
+
     public Main() {
     }
 
@@ -43,40 +51,123 @@ public class Main {
     }
 
     protected void run() {
-        files = new Files();
-        files.setDataDirectory(new File(System.getProperty("user.dir"), "data"));
-        strings = new Strings();
-        File infile;
-        infile = new File(files.getInputDataDir(strings), "pollution.csv");
-        File outdir;
-        outdir = files.getOutputDataDir(strings);
-        File outfile;
-        outfile = new File(outdir, "pollution.geojson");
-        PrintWriter pw;
-        pw = Generic_StaticIO.getPrintWriter(outfile, false);
+        try {
+            files = new Files();
+            files.setDataDirectory(new File(System.getProperty("user.dir"), "data"));
+            strings = new Strings();
+            outdir = files.getOutputDataDir(strings);
+
+//        // Process pollution
+//        outfile = new File(outdir, name + ".geojson");
+//        pw = Generic_StaticIO.getPrintWriter(outfile, false);
+//        name = "pollution";
+//        infile = new File(files.getInputDataDir(strings), name + ".csv");
+//        processLoadPollutionData();
+
+            // Process calderdale-public-wifi-spots
+            name = "calderdale-public-wifi-spots";
+            infile = new File(files.getInputDataDir(strings), name + ".csv");
+            outfile = new File(outdir, name + ".geojson");
+            pw = Generic_StaticIO.getPrintWriter(outfile, false);
+            processLoadCalderdalePublicWifiSpotsData();
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
+            ex.printStackTrace(System.err);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    protected void processLoadCalderdalePublicWifiSpotsData() throws Exception {
+        // Read the input file into memory.
+        ArrayList<String> lines;
+        lines = Generic_ReadCSV.read(infile, outdir, 1);
+        System.out.println(lines.size());
+        // Construct points
+        String line;
+        String[] split;
+        // GeoJSON
+        Position position;
+        Point point;
+        Iterator<String> ite;
+        ite = lines.iterator();
+        // Header
+        String header;
+        header = ite.next();
+        System.out.println(header);
+        String[] fieldnames;
+        fieldnames = header.split(",");
+        // Initialise feature collection
+        FeatureCollection fc = new FeatureCollection();
+        Map<String, Object> properties;
+        while (ite.hasNext()) {
+            line = ite.next();
+            System.out.println(line);
+            properties = new HashMap();
+            //p = new Position(longitude, latitude, null);
+            split = line.split("\"");
+            if (split.length == 1) {
+                split = line.split(",");
+            } else {
+                if (split.length == 3) {
+                    String part1;
+                    part1 = split[0].substring(0, split[0].length() - 1);
+                    String[] splitPart1;
+                    splitPart1 = part1.split(",");
+                    String part2;
+                    part2 = split[1];
+                    String part3;
+                    part3 = split[2].substring(1, split[2].length() - 1);
+                    String[] splitPart3;
+                    splitPart3 = part3.split(",");
+                    split = new String[splitPart1.length + 3 + splitPart3.length];
+                    System.arraycopy(splitPart1, 0, split, 0, splitPart1.length);
+                    split[splitPart1.length] = part2;
+                    System.arraycopy(splitPart3, 0, split, splitPart1.length + 1, splitPart3.length);
+//For checking
+//                    System.out.println(line);
+//                    for (int i = 0; i < split.length - 1; i ++) {
+//                        System.out.print(split[i] + ",");
+//                    }
+//                    System.out.print(split[split.length - 1]);
+                    
+                } else {
+                    throw new Exception("Need dev!");
+                }
+            }
+            int n;
+            n = fieldnames.length;
+            for (int i = 0; i < n; i++) {
+                properties.put(fieldnames[i], split[i]);
+            }
+            // Get latitude and longitude
+            position = new Position(
+                    Double.valueOf(split[n - 2]),
+                    Double.valueOf(split[n - 1]));
+            point = new Point(position);
+            // Geometry geometry = null;
+            String content = FeatureConverter.toStringValue(point);
+            System.out.println(content);
+            Geometry geometry = point.getGeometry();
+            Feature feature = FeatureConverter.toFeature(geometry);
+            feature.getFeature().setProperties(properties);
+            String featureContent = FeatureConverter.toStringValue(feature);
+            System.out.println(featureContent);
+            fc.addFeature(feature);
+        }
+        String featureCollectionContent = FeatureConverter.toStringValue(fc);
+        System.out.println(featureCollectionContent);
+        pw.println(featureCollectionContent);
+        pw.close();
+    }
+
+    protected void processLoadPollutionData() {
         // Read the input file into memory.
         ArrayList<String> lines;
         lines = Generic_ReadCSV.read(infile, outdir, 1);
         System.out.println(lines.size());
         // Construct points
         double[] latlon;
-        //BigDecimal[] latlon;
-        //Double longitude;
-        //Double latitude;
-
-        Vector_OSGBtoLatLon projector;
-        projector = new Vector_OSGBtoLatLon();
         String line;
-        String s_SITE_ID;
-        String s_ADDRESS;
-        String s_SITE_TYPE;
-        String s_DIST_TO_KERB;
-        String s_HEIGHT;
-        String s_DISTANCE_TO_RELEVANT_EXP;
-        String s_ANNUAL_MEAN_2015_BIAS_ADJUSTED;
-        String s_EASTING;
-        String s_NORTHING;
-
         String SITE_ID;
         String ADDRESS;
         String SITE_TYPE;
@@ -87,23 +178,20 @@ public class Main {
         String EASTING;
         String NORTHING;
         String[] split;
-
         // GeoJSON
         Position position;
         Point point;
-
         Iterator<String> ite;
         ite = lines.iterator();
-
+        // Header
         String header;
         header = ite.next();
         System.out.println(header);
         String[] fieldnames;
         fieldnames = header.split(",");
-
+        // Initialise feature collection
         FeatureCollection fc = new FeatureCollection();
         Map<String, Object> properties;
-
         while (ite.hasNext()) {
             line = ite.next();
             System.out.println(line);
@@ -149,29 +237,16 @@ public class Main {
             // Geometry geometry = null;
             String content = FeatureConverter.toStringValue(point);
             System.out.println(content);
-
             Geometry geometry = point.getGeometry();
             Feature feature = FeatureConverter.toFeature(geometry);
             feature.getFeature().setProperties(properties);
             String featureContent = FeatureConverter.toStringValue(feature);
             System.out.println(featureContent);
-
             fc.addFeature(feature);
         }
         String featureCollectionContent = FeatureConverter.toStringValue(fc);
         System.out.println(featureCollectionContent);
         pw.println(featureCollectionContent);
         pw.close();
-        // Write out result
-//        //Geometry geometry = ...
-//        Geometry geometry = null;
-//        
-//
-//        
-//
-//        FeatureCollection featureCollection = FeatureConverter.toFeatureCollection(geometry);
-//        String featureCollectionContent = FeatureConverter.toStringValue(featureCollection);
-//
-//        Map<String, Object> contentMap = FeatureConverter.toMap(geometry);
     }
 }
