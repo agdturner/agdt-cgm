@@ -23,7 +23,7 @@
         </license>
     </licenses>
     <organization>
-        <name>Centre for Computational Geography</name>
+        <name>Centre for Computational Geography, University of Leeds</name>
         <url>http://www.ccg.leeds.ac.uk/</url>
     </organization>
     <developers>
@@ -31,8 +31,8 @@
             <id>agdturner</id>
             <name>Andy Turner</name>
             <email>a.g.d.turner@leeds.ac.uk</email>
-            <organization>University of Leeds</organization>
-            <organizationUrl>http://www.leeds.ac.uk</organizationUrl>
+            <organization>Centre for Computational Geography, University of Leeds</organization>
+            <organizationUrl>http://www.ccg.leeds.ac.uk</organizationUrl>
             <roles>
                 <role>developer</role>
             </roles>
@@ -41,8 +41,11 @@
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <generic.version>1.0-SNAPSHOT</generic.version>
-        <vector.version>1.0-SNAPSHOT</vector.version>
+        <agdt-generic.version>1.0-SNAPSHOT</agdt-generic.version>
+        <agdt-vector.version>1.0-SNAPSHOT</agdt-vector.version>
+        <agdt-geotools.version>0.1-SNAPSHOT</agdt-geotools.version>
+        <agdt-data.version>0.1-SNAPSHOT</agdt-data.version>
+        <geotools.version>13.2</geotools.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
@@ -51,21 +54,33 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
-            <!--
-            <groupId>uk.ac.leeds.ccg.andyt.generic</groupId>
-            -->
             <groupId>uk.ac.leeds.ccg.andyt</groupId>
-            <artifactId>generic</artifactId>
-            <version>${generic.version}</version>
+            <artifactId>agdt-generic</artifactId>
+            <version>${agdt-generic.version}</version>
         </dependency>
         <dependency>
             <groupId>uk.ac.leeds.ccg.andyt</groupId>
-            <artifactId>vector</artifactId>
-            <version>${vector.version}</version>
+            <artifactId>agdt-vector</artifactId>
+            <version>${agdt-vector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>uk.ac.leeds.ccg.andyt</groupId>
+            <artifactId>agdt-geotools</artifactId>
+            <version>${agdt-geotools.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>uk.ac.leeds.ccg.andyt</groupId>
+            <artifactId>agdt-data</artifactId>
+            <version>${agdt-data.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-shapefile</artifactId>
+            <version>${geotools.version}</version>
         </dependency>
         <dependency>
             <groupId>mil.nga.sf</groupId>
@@ -76,19 +91,19 @@
        
     <repositories>
         <repository>
-            <id>generic</id>
-            <name>GitHub agdturner generic Repository</name>
-            <url>https://github.com/agdturner/generic</url>
+            <id>agdt-generic</id>
+            <name>GitHub agdturner agdt-generic Repository</name>
+            <url>https://github.com/agdturner/agdt-generic</url>
         </repository>
         <repository>
-            <id>vector</id>
-            <name>GitHub agdturner vector Repository</name>
-            <url>https://github.com/agdturner/vector</url>
+            <id>agdt-vector</id>
+            <name>GitHub agdturner agdt-vector Repository</name>
+            <url>https://github.com/agdturner/agdt-vector</url>
         </repository>
         <repository>
-            <id>maven2-repository.dev.java.net</id>
-            <name>Java.net repository</name>
-            <url>http://download.java.net/maven/2</url>
+            <id>agdt-data</id>
+            <name>GitHub agdturner agdt-data Repository</name>
+            <url>https://github.com/agdturner/agdt-data</url>
         </repository>
     </repositories>
     
