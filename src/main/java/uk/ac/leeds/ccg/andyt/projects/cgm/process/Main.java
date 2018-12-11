@@ -22,8 +22,8 @@ import mil.nga.sf.geojson.FeatureConverter;
 import mil.nga.sf.geojson.Point;
 import mil.nga.sf.geojson.Position;
 //import mil.nga.sf.geojson.Geometry;
-import uk.ac.leeds.ccg.andyt.generic.io.Generic_ReadCSV;
-import uk.ac.leeds.ccg.andyt.generic.io.Generic_StaticIO;
+import uk.ac.leeds.ccg.andyt.data.format.Generic_ReadCSV;
+import uk.ac.leeds.ccg.andyt.generic.io.Generic_IO;
 import uk.ac.leeds.ccg.andyt.projects.cgm.core.Strings;
 import uk.ac.leeds.ccg.andyt.projects.cgm.io.Files;
 import uk.ac.leeds.ccg.andyt.vector.projection.Vector_OSGBtoLatLon;
@@ -59,16 +59,15 @@ public class Main {
 
 //        // Process pollution
 //        outfile = new File(outdir, name + ".geojson");
-//        pw = Generic_StaticIO.getPrintWriter(outfile, false);
+//        pw = Generic_IO.getPrintWriter(outfile, false);
 //        name = "pollution";
 //        infile = new File(files.getInputDataDir(strings), name + ".csv");
 //        processLoadPollutionData();
-
             // Process calderdale-public-wifi-spots
             name = "calderdale-public-wifi-spots";
             infile = new File(files.getInputDataDir(strings), name + ".csv");
             outfile = new File(outdir, name + ".geojson");
-            pw = Generic_StaticIO.getPrintWriter(outfile, false);
+            pw = Generic_IO.getPrintWriter(outfile, false);
             processLoadCalderdalePublicWifiSpotsData();
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
@@ -129,7 +128,7 @@ public class Main {
 //                        System.out.print(split[i] + ",");
 //                    }
 //                    System.out.print(split[split.length - 1]);
-                    
+
                 } else {
                     throw new Exception("Need dev!");
                 }
@@ -141,8 +140,8 @@ public class Main {
             }
             // Get latitude and longitude
             position = new Position(
-                    Double.valueOf(split[n - 2]),
-                    Double.valueOf(split[n - 1]));
+                    Double.valueOf(split[n - 1]),
+                    Double.valueOf(split[n - 2]));
             point = new Point(position);
             // Geometry geometry = null;
             String content = FeatureConverter.toStringValue(point);
